@@ -1,9 +1,9 @@
-﻿Universidad San Carlos de Guatemala 
-Facultad de Ingeniería 
-Escuela de Ciencias y Sistemas
-Redes de computadoras 1 sección Q
-Ing. Allan Alberto Morataya Gómez
-Aux. Jorge David Ambrosio Ventura
+﻿Universidad San Carlos de Guatemala <br>
+Facultad de Ingeniería <br>
+Escuela de Ciencias y Sistemas <br>
+Redes de computadoras 1 sección Q <br>
+Ing. Allan Alberto Morataya Gómez <br>
+Aux. Jorge David Ambrosio Ventura <br>
 <br>
 <br>
 ### <center>Manual de configuración proyecto 1 </center>
@@ -53,87 +53,88 @@ Para correr el archivo gns3 sin ningun problema se necesita lo siguiente:
 
 ### Comandos utilizados 
 #### CREAR EN SW4
-conf t 
-hostname ESW4
-vlan 10 
-name RRH
-vlan 20
-name INFORMATICA
-vlan 30
-name CONTABILIDAD
-vlan 40
-name VENTAS
+conf t <br>
+hostname ESW4 <br>
+vlan 10 <br>
+name RRH <br>
+vlan 20 <br>
+name INFORMATICA <br>
+vlan 30 <br>
+name CONTABILIDAD <br>
+vlan 40 <br>
+name VENTAS <br>
 
 #### CONFIGURAR MODO SERVER EN SW4
 
-conf t 
-vtp version 2
-vtp mode server
-vtp domain GRUPO4
-vtp password grupo4
+conf t <br>
+vtp version 2 <br>
+vtp mode server <br>
+vtp domain GRUPO4 <br>
+vtp password grupo4 <br>
 
 #### CONFIGURAR MODO CLIENTE EN SW1 - SW3, SW5 - SW 10
 
-conf t
-vtp mode client
-vtp domain GRUPO4
-vtp password grupo4
+conf t <br>
+vtp mode client <br>
+vtp domain GRUPO4 <br>
+vtp password grupo4 <br>
 
 #### CONFIGURAR MODO TRANSPARENTE EN SW11 
-conf t 
-vtp mode transparent
-vtp domain GRUPO4
-vtp password grupo4
+
+conf t <br>
+vtp mode transparent <br>
+vtp domain GRUPO4 <br>
+vtp password grupo4 <br>
 
 ### CONFIGURAR BRIDGE ROOT STP EL SW4 
 
-conf t
-spanning-tree vlan 1 root primary
-spanning-tree vlan 10 root primary 
-spanning-tree vlan 20 root primary 
-spanning-tree vlan 30 root primary 
-spanning-tree vlan 40 root primary
+conf t <br>
+spanning-tree vlan 1 root primary <br>
+spanning-tree vlan 10 root primary <br>
+spanning-tree vlan 20 root primary <br>
+spanning-tree vlan 30 root primary <br>
+spanning-tree vlan 40 root primary <br>
 
 
-description HACIA_ESW9
-switchport trunk encapsulation dot1q 
-switchport mode trunk
-switchport trunk allowed vlan 1,10,20,30,40,1002-1005
+description HACIA_ESW9 <br>
+switchport trunk encapsulation dot1q <br>
+switchport mode trunk <br>
+switchport trunk allowed vlan 1,10,20,30,40,1002-1005 <br>
 
 #### MODO ACCESO
-Conf t
-Int f#/#
-Switchport mode Access
-Switchport Access vlan #
-Do wri
-End
+Conf t <br>
+Int f#/# <br>
+Switchport mode Access <br>
+Switchport Access vlan # <br>
+Do wri <br>
+End <br>
 
 #### MODO TRONCAL
-Conf t
-Int f#/#
-Switchport mode trunk
-Switchport trunk allowed vlan 1,#,#,1002-1005
-Do wri
-End
+Conf t <br>
+Int f#/# <br>
+Switchport mode trunk <br>
+Switchport trunk allowed vlan 1,#,#,1002-1005 <br>
+Do wri <br>
+End <br>
 
 #### CONFIGURACION VTP
-Conf t
-Vtp domain nombredeldominio
-Vtp password contraseñadeldominio
-Vtp mode server|client|transparent
-Do wri
-End
+Conf t <br>
+Vtp domain nombredeldominio <br>
+Vtp password contraseñadeldominio <br>
+Vtp mode server|client|transparent <br>
+Do wri <br>
+End <br>
 
 #### PORT CHANNEL
-Conf t
-Interfaces range f#/#-#
-Channel-group # mode on
-Do wri
-End
+Conf t <br>
+Interfaces range f#/#-# <br>
+Channel-group # mode on <br>
+Do wri <br>
+End <br>
 
 #### CONFIGURACION VLAN
-Conf t
-Vlan numerodevlan
-Name nombredevlan
-Do wri
-End
+Conf t <br>
+Vlan numerodevlan <br>
+Name nombredevlan <br>
+Do wri <br>
+End <br>
